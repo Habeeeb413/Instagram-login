@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fafafa;
+        }
+        .login-container {
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
+            padding: 40px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .login-container img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #287dc1;
+        }
+        .login-container .fb-login {
+            background-color: #4267B2;
+            margin-top: 10px;
+        }
+        .login-container .fb-login:hover {
+            background-color: #365899;
+        }
+        .login-container .meta {
+            margin-top: 30px;
+            color: #999;
+        }
+        .login-container .meta span {
+            color: black;
+            font-weight: bold;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1024px-Instagram_logo.svg.png" alt="Instagram Logo">
+        <button class="fb-login">Continue with Facebook</button>
+        <div style="margin: 10px 0; color: #999;">OR</div>
+        <input type="text" id="username" placeholder="Phone number, username, or email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="validateLogin()">Log in</button>
+        <div class="meta">from <span>Meta</span></div>
+        <div id="error-message" class="error-message"></div>
+    </div>
+    <script>
+        function validateLogin() {
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            if (password !== 'correctpassword') { // Replace 'correctpassword' with the actual correct password.
+                errorMessage.textContent = 'Incorrect password. Please try again.';
+            } else {
+                errorMessage.textContent = '';
+                alert('Login successful!'); // You can replace this with actual login logic.
+            }
+        }
+    </script>
+</body>
+</html>
